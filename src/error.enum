@@ -1,0 +1,11 @@
+// HANDLE_ERROR(name, stringName, msg)
+// name        枚举名
+// stringName  字串符枚举名
+// msg         错误信息,必须只能有且只有一个%s,决定ErrorIdMsg的位置
+
+HANDLE_ERROR(unknown, "unknown", "\n%s\n") // 未知错误,占位符了属于是
+HANDLE_ERROR(core, "core", "\n%s\n")       // 核心错误就是这些内部代码出的bug,需要我们来修
+HANDLE_ERROR(lexer, "lexer", "%s\n")       // 词法分析器错误是在词法分析过程中遇到的词法错误
+HANDLE_ERROR(compiler, "compiler", "%s\n") // 编译器错误有用户代码的语法错误和编译错误
+HANDLE_ERROR(runtime, "runtime", "\n%s\n") // 运行时错误,如类型转换错误等等
+HANDLE_ERROR(memory, "memory", "\n%s\n")   // 内存错误属于核心错误(好像用不到了,全放核心错误里算了..)

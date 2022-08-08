@@ -1,0 +1,27 @@
+
+
+HANDLE_VALUE(Unknown, "Unknown")
+
+// Simple Type
+
+// Null
+HANDLE_VALUE(Null, "Null")
+
+// Bool(Char)
+HANDLE_VALUE(False, "False")
+HANDLE_VALUE(True, "True")
+
+// Number
+HANDLE_VALUE(Num, "Num")
+HANDLE_VALUE(Char, "Char")
+HANDLE_VALUE(Int, "Int")
+HANDLE_VALUE(Long, "Long")
+HANDLE_VALUE(Float, "Float")
+HANDLE_VALUE(Double, "Double")
+HANDLE_VALUE(Ptr, "Ptr")
+
+// Complex Type
+
+HANDLE_VALUE(String, "String")
+
+HANDLE_VALUE(Object, "Object")

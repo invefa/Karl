@@ -1,0 +1,48 @@
+// HANDLE_ERROR(name, stringName, belong, msg, annex)
+// name        枚举名
+// stringName  字串符枚举名
+// belong      该ErrorId所属的ErrorType
+// msg         该ErrorId的特定错误信息,可含%s符号等随意
+
+// placeholder
+HANDLE_ERRORID(unknown, "unknown", ErrorType::core, "Unknown error.")
+
+// coreError
+HANDLE_ERRORID(unreachableBranch, "unreachableBranch", ErrorType::core,
+               "%s:%d:1: error: Unreachable branch reached!")
+HANDLE_ERRORID(failToReadFile, "failToReadFile", ErrorType::core,
+               "Fail to read file:[%s]!")
+// valueError
+HANDLE_ERRORID(valueTypeDissimilarity, "valueTypeDissimilarity", ErrorType::core,
+               "value type dissimilarity: %s and %s .")
+// stackError
+HANDLE_ERRORID(stackHasNoData, "stackHasNoData", ErrorType::core,
+               "The stack has no data!")
+HANDLE_ERRORID(stackIndexOutOfRange, "stackIndexOutOfRange", ErrorType::core,
+               "The stack index out of range!")
+
+// lexerError
+HANDLE_ERRORID(unsupportedChar, "unsupportedChar", ErrorType::lexer,
+               "Unsupported char '%c'.")
+HANDLE_ERRORID(invalidNumberFormat, "invalidNumberFormat", ErrorType::lexer,
+               "Invalid number format.")
+HANDLE_ERRORID(unterminatedString, "unterminatedString", ErrorType::lexer,
+               "Unterminated string.")
+
+// compilerError
+HANDLE_ERRORID(assertTokenTypeFailure, "assertTokenTypeFailure", ErrorType::compiler,
+               "Expect <%s>, but got <%s>.")
+HANDLE_ERRORID(unknownTokenType, "unknownTokenType", ErrorType::compiler,
+               "Unknown TokenType: <%s>.")
+HANDLE_ERRORID(typeDissimilarity, "typeDissimilarity", ErrorType::compiler,
+               "type dissimilarity: %s and %s .")
+HANDLE_ERRORID(unknownStatement, "unknownStatement", ErrorType::compiler,
+               "Unknown statement.")
+HANDLE_ERRORID(expectedExpr, "expectedExpression", ErrorType::compiler,
+               "Expected expression.")
+HANDLE_ERRORID(varNotDefined, "varNotDefined", ErrorType::compiler,
+               "The Variable : \"%s\" was not defined in this scope.")
+HANDLE_ERRORID(idxOutOfLimit, "idxOutOfLimit", ErrorType::compiler,
+               "The number of variables or functions exceeds the limit.")
+HANDLE_ERRORID(varAlreadyDefined, "varAlreadyDefined", ErrorType::compiler,
+               "The Variable : \"%s\" already defined.")

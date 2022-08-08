@@ -1,0 +1,66 @@
+// #define HANDLE_BYTECODE(name, stringName, effect, operand)
+// name字节码的枚举名称
+// stringName是字节码的字串符名称(输出使用)
+// effect该字节码对栈空间的影响量
+// operand该字节码所带的参数个数(1 arg:1 byte)
+
+HANDLE_BYTECODE(UNK, "unknown", +0, 0)
+
+// 常量操作
+HANDLE_BYTECODE(LOAD_CONST, "loadConst", +1, 4) // 在模块常量表内寻找
+
+// 变量操作
+HANDLE_BYTECODE(DEFINE_VAR, "defineVar", +0, 0)
+HANDLE_BYTECODE(STORE_VAR, "storeVar", -1, 2)
+HANDLE_BYTECODE(CHANGE_VAR, "changeVar", +0, 2)
+HANDLE_BYTECODE(LOAD_VAR, "loadVar", +1, 2)
+
+// 函数调用
+HANDLE_BYTECODE(CALL, "call", +0, 4) // 两个operand,一个指定module一个指定fn
+
+// 返回值操作
+HANDLE_BYTECODE(SET_RET, "setReturnValue", +0, 0)
+HANDLE_BYTECODE(RETURN, "return", +0, 0)
+
+// 下面有一系列的二元操作
+// rightValue=pop();leftValue=pop();push(leftValue op rightValue),两次pop一次push为-1
+
+// 通用比较
+HANDLE_BYTECODE(EQUAL, "equal", -1, 0)
+HANDLE_BYTECODE(NEQUAL, "notEqual", -1, 0)
+
+// 数学比较
+HANDLE_BYTECODE(GEQUAL, "greateEqual", -1, 0)
+HANDLE_BYTECODE(LEQUAL, "lessEqual", -1, 0)
+HANDLE_BYTECODE(GREAT, "great", -1, 0)
+HANDLE_BYTECODE(LESS, "less", -1, 0)
+
+// 数学运算
+HANDLE_BYTECODE(ADD, "add", -1, 0)
+HANDLE_BYTECODE(SUB, "sub", -1, 0)
+HANDLE_BYTECODE(MUL, "mul", -1, 0)
+HANDLE_BYTECODE(DIV, "div", -1, 0)
+HANDLE_BYTECODE(MOD, "mov", -1, 0)
+HANDLE_BYTECODE(POW, "pow", -1, 0)
+
+// 逻辑运算
+HANDLE_BYTECODE(LOR, "logicOr", -1, 0)
+HANDLE_BYTECODE(LAND, "logicAnd", -1, 0)
+HANDLE_BYTECODE(LNOT, "logicNot", 0, 0)
+
+// 特殊数学运算
+HANDLE_BYTECODE(TON, "ton", +0, 0) // Take the opposite number(取相反数)
+
+// 基本栈操作
+HANDLE_BYTECODE(PUSH_NULL, "pushNull", +1, 0)
+HANDLE_BYTECODE(PUSH, "push", +1, 1)
+HANDLE_BYTECODE(POP, "pop", -1, 0)
+
+// 以下为无条件跳转,条件跳转,反条件跳转
+HANDLE_BYTECODE(JMP, "jump", 0, 4)    // ip += operand
+HANDLE_BYTECODE(CJMP, "cjump", -1, 4) // if(pop().type = ValueType::TRUE) ip += operand
+HANDLE_BYTECODE(NJMP, "njump", -1, 4) // if(pop().type = ValueType::FALSE) ip += operand
+
+// 占位符
+HANDLE_BYTECODE(PASS, "pass", 0, 0)
+HANDLE_BYTECODE(END, "end", 0, 0)

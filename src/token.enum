@@ -1,0 +1,75 @@
+// HANDLE_SIGNTOKEN(name, stringName)
+// HANDLE_KWTOKEN(name, stringName)
+// name       枚举名
+// stringName 枚举名字串符
+
+// 要添加此类token记得给KEYWORD_TOKENTYPE_TOTAL更新
+
+// type Keyword Token
+HANDLE_TKWTOKEN(int_, "int")
+HANDLE_TKWTOKEN(bool_, "bool")
+HANDLE_TKWTOKEN(string_, "string")
+HANDLE_TKWTOKEN(long_, "long")
+HANDLE_TKWTOKEN(double_, "double")
+
+// keyword Token
+HANDLE_KWTOKEN(var, "var")
+HANDLE_KWTOKEN(func, "func")
+HANDLE_KWTOKEN(import, "import")
+HANDLE_KWTOKEN(none, "none")
+HANDLE_KWTOKEN(if_, "if")
+HANDLE_KWTOKEN(else_, "else")
+HANDLE_KWTOKEN(elif, "elif")
+HANDLE_KWTOKEN(for_, "for")
+HANDLE_KWTOKEN(while_, "while")
+HANDLE_KWTOKEN(true_, "true")
+HANDLE_KWTOKEN(false_, "false")
+HANDLE_KWTOKEN(break_, "break")
+HANDLE_KWTOKEN(continue_, "continue")
+HANDLE_KWTOKEN(return_, "return")
+HANDLE_KWTOKEN(class_, "class")
+HANDLE_KWTOKEN(unsigned_, "unsigned")
+
+// sign Token
+HANDLE_SIGNTOKEN(unknown, "unknown")
+HANDLE_SIGNTOKEN(num, "number")
+HANDLE_SIGNTOKEN(str, "string")
+HANDLE_SIGNTOKEN(id, "id")
+
+HANDLE_SIGNTOKEN(assign, "assign")
+
+HANDLE_SIGNTOKEN(equal, "equal")
+HANDLE_SIGNTOKEN(notEqual, "notEqual")
+HANDLE_SIGNTOKEN(greate, "greate")
+HANDLE_SIGNTOKEN(greateEqual, "greateEqual")
+HANDLE_SIGNTOKEN(less, "less")
+HANDLE_SIGNTOKEN(lessEqual, "lessEqual")
+
+HANDLE_SIGNTOKEN(logicOr, "logicOr")
+HANDLE_SIGNTOKEN(logicAnd, "logicAnd")
+HANDLE_SIGNTOKEN(logicNot, "logicNot")
+
+HANDLE_SIGNTOKEN(add, "add")
+HANDLE_SIGNTOKEN(sub, "sub")
+HANDLE_SIGNTOKEN(mul, "mul")
+HANDLE_SIGNTOKEN(div, "div")
+HANDLE_SIGNTOKEN(power, "power")
+HANDLE_SIGNTOKEN(mod, "mod")
+
+HANDLE_SIGNTOKEN(dot, "dot")
+HANDLE_SIGNTOKEN(comma, "comma")
+HANDLE_SIGNTOKEN(question, "question")
+HANDLE_SIGNTOKEN(at, "at")
+HANDLE_SIGNTOKEN(sharp, "sharp")
+HANDLE_SIGNTOKEN(colon, "colon")
+HANDLE_SIGNTOKEN(wavesign, "wavesign")
+HANDLE_SIGNTOKEN(end, "end") //分号
+
+HANDLE_SIGNTOKEN(lpare, "lpare")
+HANDLE_SIGNTOKEN(rpare, "rpare")
+HANDLE_SIGNTOKEN(lbracket, "lbracket")
+HANDLE_SIGNTOKEN(rbracket, "rbracket")
+HANDLE_SIGNTOKEN(lbrace, "lbrace")
+HANDLE_SIGNTOKEN(rbrace, "rbrace")
+
+HANDLE_SIGNTOKEN(eof, "eof")
